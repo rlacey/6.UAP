@@ -21,10 +21,17 @@
 
 \documentclass{article}
 
-\usepackage{mhchem} % Package for chemical equation typesetting
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
 \usepackage{siunitx} % Provides the \SI{}{} command for typesetting SI units
 
 \usepackage{graphicx} % Required for the inclusion of images
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{cancel}
+
+\usepackage{float}
+
+\usepackage[T1]{fontenc} % allow small bold caps
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
@@ -36,7 +43,7 @@
 %	DOCUMENT INFORMATION
 %----------------------------------------------------------------------------------------
 
-\title{Mobile Application for Clinical Diagnoses  \\ UAP Proposal} % Title
+\title{Mobile Diagnostic Tools for Pulmonary Disease\\ UAP Proposal} % Title
 
 \author{Ryan Lacey}
 
@@ -55,29 +62,32 @@ Proposed: & March 7, 2014 \\
 
 \section{Objective}
 
-The purpose of this project is to develop a mobile application for use in clinics with limited resources in developing regions of India. The application will serve as a graphical interface through which clinicians can collect data with a low-cost spirometer and digital stethoscope. Ultimately the application will also process patient data to provide diagnostic suport for untrained healthworkers. \\
-
-
+The purpose of this project is to develop a mobile application for use in clinics with limited resources in developing regions of India. The application will serve as a diagnostic tool for clinicians trained in Ayuverdic medicine to diagnose patients suffering from a pulmonary disease. With an Android mobile device and a low cost digital stethoscope these clinicians will be able to collect patient lung sounds, run diagnostic machine learning algorithms on the lung sound data, and receive classification feedback with the objective of early detection of the onset of pulmonary disease.\\
 
 \section{Motivation}
 
-Pulmonary disease (which includes asthma, COPD, pneumonia, lung cancer, tuberculosis) is an increasingly large portion of the global health challenges. Chronic Obstructive Pulmonary Disease (COPD) alone is currently the third leading cause of death in the world and second leading cause of death in India after ischemic heart disease (heart attacks); pneumonia is the leading cause of death in children under the age of 5. There is a great need to provide health workers in India a simple tool that can be used to screen for respiratory disease in the primary care setting and identify individuals that require clinical examination and intervention. The disease burden in India can be significantly reduced if there were better tools that could perform early detection of respiratory disease and enable clinical intervention (through medication or behavioral medicine) before the disease became more critical or developed further into chronic disease (COPD). For this project we are partnering with a top respiratory disease clinic in India.
+Pulmonary diseases (asthma, pneumonia, lung cancer, tuberculosis, etc.) are an increasing concern in the realm of global health challenges. Chronic obstructive pulmonary disease (COPD) alone is currently the third leading cause of death in the world and second leading cause of death in India. Pneumonia, which also affects the lungs, remains the leading cause of death in Indian children under the age of five. Especially at risk are low income populations due to consequences of living environment, lack of access to health care, and the high cost of screening tools for detection of these diseases.\\
+
+There is a great need to provide health workers in India a simple tool that can be used to screen for respiratory disease in the primary care setting and identify individuals that require clinical examination and intervention. Since a majority of the clinicians practice Ayuverdic medicine they have little training for diagnosing respiratory problems. As a result many patients go undiagnosed or are misdiagnosed with having a cardiac disease. The disease burden can be significantly reduced if there were better tools that could perform early detection of respiratory disease and enable clinical intervention before the disease became more critical or developed further into chronic disease.\\
 
 \section{Goals}
 \begin{enumerate}
-\item[] \texttt{Phase I}\\ Develop graphical user interface for Android mobile devices.
-\item[] \texttt{Phase II} \\ Integrate digital monitors into application to pass data through a low cost auxillary hub.
-\item[] \texttt{Phase III} \\ Utilize machine learning algorithms to classify common disease states.
+\item[] \texttt{Phase I}\\ Utilize machine learning algorithms to classify common disease states.
+\item[] \texttt{Phase II} \\ Integrate digital monitors into application.
+\item[] \texttt{Phase III} \\ Develop graphical user interface for Android mobile devices.
 \end{enumerate}
 
-The first phase is the most open ended portion of the project. Development of an intuitive user interface is always an iterative process and is likely to continue even as the project moves into the other phases. The goal this phase is to create a skeleton interface that will allow for basic functionality to be realized once the data connection is completed. This includes the main view of the application, any menus necessary for operation, and the first steps in graphical displays of patient data. The GUI will be developed in Java using the Android SDK foruse on phones and tablets. The ultimate goal is for the interface to be intuitive and language independant so that individuals with limitied technological experience will be able to utilize the application. \\
+Phase I of the project is to develop the tools necessary for patient data to be analyzed. The most fundamental function of the application is for machine learning algorithms to give a binary classification of the data, ie. either the patient has the disease or the patient does not suffer from the disease. Since these classifiers only state "yes or no" instead of "which", each disease will require its own classifier. The most common technique for this type of classification is a simple linear classifier called a support vector machine (SVM). The SVM will train on pre-classified data of Indian patients with the target diseases and aims to minimize potential misclassification of future patients based off of the sample data. Since there are no known machine learning libraries for Android devices a large portion of the work for this project will be in the implementation, training, and testing of these algorithms. \\
 
-Phase II involves more software development, but at a lower level than Phase I. The  spirometer and digital stethoscope connect to the mobile device through XXXX. This connecting hub was developed in MIT's Development Lab with simplicity in mind so as to minimuze costs of production. Patient data will pass from the digital monitors through this hub into the application. \\
+Phase II involves converting audio signals from the digital stethoscope into data for the machine learning algorithms. The stethoscope records data at four locations on the patient's body: the front, side, back, and throat. Lung sound data, as seen in \texttt{Figure 1}, will be ran through a pattern recognition algorithm that identifies crackle, wheeze, and plural rub. The output is a two-dimensional matrix incorporating time and sound information from which features can be extracted for the learning algorithm.\\
 
-Following the completion of the hardware integration, time permitting, work will begin on a classificaion algorithm for common diseases. A simple machine learning algorithm will suffice to analyze patient data and return to the clinician most probable diseases the patient may have by comparing to a known set of classified patients. This algorithm should improve over time as the disease clinic in India sends over more classified patient data for the algorithm to train on. \\
+\begin{figure}[H]
+\minipage{\textwidth}
+	\includegraphics[width=\linewidth]{images/LungSounds.png}
+	\caption{Raw data from lung sounds showing time-frequency plot.}
+\endminipage\hfill
+\end{figure}
 
-\section{Requirements}
-
-
+Phase III is the most open ended portion of the project. Development of an intuitive user interface is always an iterative process and is likely to continue as feedback is gathered from the test users and eventually the target clinician group. The first task is to create a skeleton interface that will allow for basic functionality to be realized once the data connection between the monitor and the mobile device is completed. This includes the main view of the application, any menus necessary for operation, and the first steps in graphical displays of patient data. The GUI will be developed in Java using the Android SDK for use on phones and tablets. The ultimate goal is for the interface to be intuitive and language independent so that individuals with limited technological experience will be able to utilize the application. \\
 
 \end{document}

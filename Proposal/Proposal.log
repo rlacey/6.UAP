@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.9.23)  3 MAR 2014 21:25
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.9.23)  4 MAR 2014 00:17
 entering extended mode
 **Proposal.tex
 (M:\School\6.UAP\Report\Proposal\Proposal.tex
@@ -161,15 +161,8 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \mhchem@minispace@tmp=\skip61
 \mhchem@option@minussidebearingleft=\skip62
 \mhchem@option@minussidebearingright=\skip63
-
-
-Package mhchem Warning: You did not specify a 'version' option for the mhchem
-(mhchem)                package. If you are about to create a new document,
-(mhchem)                please write \usepackage[version=3]{mhchem} in your pre
-amble in
-(mhchem)                order to use the most recent version of mhchem.
-
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\siunitx\siunitx.sty"
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\siunitx\siunitx.sty"
 ("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty"
 ("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3names.sty"
 ("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3bootstrap.sty"
@@ -529,33 +522,70 @@ Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 \Gin@req@height=\dimen157
 \Gin@req@width=\dimen158
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2012/02/19 v3.2f Customizing captions (AR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2012/01/12 v1.4b caption3 kernel (AR)
+\captionmargin=\dimen159
+\captionmargin@=\dimen160
+\captionwidth=\dimen161
+\caption@indent=\dimen162
+\caption@parindent=\dimen163
+\caption@hangindent=\dimen164
+)
+\c@ContinuedFloat=\count152
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
+Package: subcaption 2012/01/12 v1.1d Sub-captions (AR)
+\c@subfigure=\count153
+\c@subtable=\count154
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\cancel\cancel.sty"
+Package: cancel 2000/03/12 v2.1 Cancel math terms
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count155
+\float@exts=\toks30
+\float@box=\box49
+\@float@everytoks=\toks31
+\@floatcapt=\box50
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
 (M:\School\6.UAP\Report\Proposal\Proposal.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count152
-\scratchdimen=\dimen159
-\scratchbox=\box49
-\nofMPsegments=\count153
-\nofMParguments=\count154
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count155
-\MPscratchDim=\dimen160
-\MPnumerator=\count156
-\makeMPintoPDFobject=\count157
-\everyMPtoPDFconversion=\toks31
+\scratchcounter=\count156
+\scratchdimen=\dimen165
+\scratchbox=\box51
+\nofMPsegments=\count157
+\nofMParguments=\count158
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count159
+\MPscratchDim=\dimen166
+\MPnumerator=\count160
+\makeMPintoPDFobject=\count161
+\everyMPtoPDFconversion=\toks33
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\beamer\base\translator\dicts\translator
 -basic-dictionary\translator-basic-dictionary-English.dict"
@@ -567,48 +597,73 @@ File: siunitx-abbreviations.cfg 2012/09/11 v2.5i siunitx: Abbreviated units
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\siunitx\config\siunitx-binary.cfg"
 File: siunitx-binary.cfg 2012/09/11 v2.5i siunitx: Binary units
 )
-\c__siunitx_mathsf_int=\count158
-\c__siunitx_mathtt_int=\count159
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c__siunitx_mathsf_int=\count162
+\c__siunitx_mathtt_int=\count163
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
 
  []
 
 [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 75.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
+<images/LungSounds.png, id=9, 1304.62407pt x 389.95688pt>
+File: images/LungSounds.png Graphic file (type png)
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
+<use images/LungSounds.png>
+Package pdftex.def Info: images/LungSounds.png used on input line 86.
+(pdftex.def)             Requested size: 345.0pt x 103.12387pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
-[2] (M:\School\6.UAP\Report\Proposal\Proposal.aux) ) 
+[2 <M:/School/6.UAP/Report/Proposal/images/LungSounds.png>] [3]
+(M:\School\6.UAP\Report\Proposal\Proposal.aux) ) 
 Here is how much of TeX's memory you used:
- 10402 strings out of 493921
- 226177 string characters out of 3147267
- 229396 words of memory out of 3000000
- 13593 multiletter control sequences out of 15000+200000
- 11229 words of font info for 43 fonts, out of 3000000 for 9000
+ 11772 strings out of 493921
+ 248499 string characters out of 3147267
+ 253301 words of memory out of 3000000
+ 14933 multiletter control sequences out of 15000+200000
+ 14476 words of font info for 46 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 38i,6n,29p,1057b,398s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-tt10.pfb>
-Output written on Proposal.pdf (2 pages, 68501 bytes).
+ 38i,7n,38p,940b,586s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fo
+nts/enc/dvips/cm-super/cm-super-t1.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/cm-super/sfbx1440.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/c
+m-super/sfrm1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/s
+frm1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1728.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on Proposal.pdf (3 pages, 1327295 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
+ 36 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
