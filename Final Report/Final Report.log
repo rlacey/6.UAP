@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.9.23)  20 MAR 2014 23:38
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2012.9.23)  7 MAY 2014 09:40
 entering extended mode
-**Proposal.tex
-(M:\School\6.UAP\Report\Proposal\Proposal.tex
+**Final*Report.tex
+("M:\School\6.UAP\Report\Final Report\Final Report.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -559,7 +559,7 @@ Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-(M:\School\6.UAP\Report\Proposal\Proposal.aux)
+("M:\School\6.UAP\Report\Final Report\Final Report.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
 LaTeX Font Info:    ... okay on input line 52.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
@@ -634,36 +634,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
-<images/LungSounds.png, id=9, 1304.62407pt x 389.95688pt>
-File: images/LungSounds.png Graphic file (type png)
-
-<use images/LungSounds.png>
-Package pdftex.def Info: images/LungSounds.png used on input line 86.
-(pdftex.def)             Requested size: 345.0pt x 103.12387pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
-[2 <M:/School/6.UAP/Report/Proposal/images/LungSounds.png>] [3]
-(M:\School\6.UAP\Report\Proposal\Proposal.aux) ) 
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
+ []
+
+[3] [4] ("M:\School\6.UAP\Report\Final Report\Final Report.aux") ) 
 Here is how much of TeX's memory you used:
- 11772 strings out of 493921
- 248499 string characters out of 3147267
- 253301 words of memory out of 3000000
- 14933 multiletter control sequences out of 15000+200000
- 14476 words of font info for 46 fonts, out of 3000000 for 9000
+ 11761 strings out of 493921
+ 248392 string characters out of 3147267
+ 254303 words of memory out of 3000000
+ 14924 multiletter control sequences out of 15000+200000
+ 15252 words of font info for 47 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 38i,7n,38p,940b,586s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fo
-nts/enc/dvips/cm-super/cm-super-t1.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/cm-super/sfbx1440.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/c
-m-super/sfrm1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/s
-frm1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1728.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on Proposal.pdf (3 pages, 1327295 bytes).
+ 38i,6n,38p,1762b,400s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program F
+iles/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-super-t1.enc}<C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/cm-super/sfbx1440.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/cm-super/sfrm1000.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/c
+m-super/sfrm1200.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/s
+frm1728.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/cm-super/sftt1000.p
+fb>
+Output written on "Final Report.pdf" (4 pages, 101572 bytes).
 PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
+ 40 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
