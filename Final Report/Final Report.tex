@@ -81,16 +81,14 @@ Phase I of the project is to develop the tools necessary for patient data to be 
 
 Phase II involves converting audio signals from the digital stethoscope into data for the machine learning algorithms. The stethoscope records data at four locations on the patient's body: the front, side, back, and throat. Lung sound data, as seen in \texttt{Figure 1}, will be ran through a pattern recognition algorithm that identifies crackle, wheeze, and plural rub. The output is a two-dimensional matrix incorporating time and sound information from which features can be extracted for the learning algorithm.\\
 
-%\begin{figure}[H]
-%\minipage{\textwidth}
-%	\includegraphics[width=\linewidth]{images/LungSounds.png}
-%	\caption{Raw data from lung sounds showing time-frequency plot.}
-%\endminipage\hfill
-%\end{figure}
+\begin{figure}[H]
+\minipage{\textwidth}
+	\includegraphics[width=\linewidth]{images/LungSounds.png}
+	\caption{Raw data from lung sounds showing time-frequency plot.}
+\endminipage\hfill
+\end{figure}
 
 Phase III is the most open ended portion of the project. Development of an intuitive user interface is always an iterative process and is likely to continue as feedback is gathered from the test users and eventually the target clinician group. The first task is to create a skeleton interface that will allow for basic functionality to be realized once the data connection between the monitor and the mobile device is completed. This includes the main view of the application, any menus necessary for operation, and the first steps in graphical displays of patient data. The GUI will be developed in Java using the Android SDK for use on phones and tablets. The ultimate goal is for the interface to be intuitive and language independent so that individuals with limited technological experience will be able to utilize the application. \\
-
-\newpage
 
 \section{Machine Learning}
 
@@ -102,7 +100,81 @@ The lack of clear documentation, potential trouble in porting from Java to Andro
 
 My first task was to implement the perceptron algorithm -- a simple, but widely used classifier. I had written this before in Python for use in classification of data from Twitter, so conversion to Java was relatively straightforward. The Java implementation was ran on the same Twitter data as a check for correctness, since the performance should have been comparable to the Python code. In regards to the classifier itself the only challenge was performance. The mathematics behind the algorithm is heavily dependent upon multidimensional matrix manipulations. Traditional looping constructs, although viable for correctness, would have yielded a product virtually unusable due to computation time. The Python code addressed this by using the Numpy library. I researched for a comparable linear algebra toolkit in Java and settled on The Apache Commons Mathematics Library. With efficient matricies at hand, I wrote several parsers for formatting the Twitter data and extracting features to classify on. The classifier was tested on a pre-labeled set of test tweets and correctly labeled over 85\% of the points. Thus a basic classifier was available for any data set.\\
 
-The code was structured so that pieces may be swapped out easily. The three main components were the parsers to read in data, algorithms to construct a feature matrix from the data, and the machine learning algorithm to classify the data. The second task was to implement a more powerful classifier -- a SVM. The SVM algorithm is similar to perceptron in that they are both linear classifiers. The advantage of the SVM, however, is that it is a maximum margin separator. This means that the classification line will pass through the point that maximizes the distance between the nearest oppositely labeled training data points. 
+The code was structured so that pieces may be swapped out easily. The three main components were the parsers to read in data, algorithms to construct a feature matrix from the data, and the machine learning algorithm to classify the data. The second task was to implement a more powerful classifier -- a SVM. The SVM algorithm is similar to perceptron in that they are both linear classifiers. The advantage of the SVM, however, is that it is a maximum margin separator. This means that the classification line will pass through the point that maximizes the distance between the nearest oppositely labeled training data points. If the line passed closer to one of the data points, then the likelihood that the classifier overfits the data increases. Overfitting gives good results on testing data but has the tendency to generalize poorly to test data in the general population. \\
 
+At this stage SVMs had just been covered in the machine learning course. The techiques for implementing a SVM were very different from the perceptron algorithm and required linear solvers. It became apparent that implementing this myself was not optimal because it would have required yet another library to be brought in to the project and forseeably a great undertaking in working out all of the details of the algorithm. Thus I decided to turn back to incorporating a machine learning library, specifically LibSVM. The modular structure of the existing code made integration of the library's SVM classifier a smooth process with minimal changes. With a SVM in hand the focus of the project switched to classification on the lung data.\\
+
+(include SVM confidence interval)\\
+
+\subsection{Feature Extraction}
+
+Feature extraction is the most open ended and challenging  component of the project. Since Android devices have limited processing power due to their mobile processing cores a balance was struck between having enough features to be able to separate lung conditions while keeping computational demand at a minimum. The features should not only correctly classify lung sounds, but also do so with a high degree of confidence. \\
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{images/VesicularWaveform.png}
+	\caption{Waveform of vesicular lung sound}
+ 	\label{fig:VesicularWaveform}
+\end{figure}
+
+Lung data comes in the form of an audio file represented by an of signal amplitude taken at regular intervals determined by the sampling frequency. A graph of amplitude over time represents the waveform of the lung sound, as seen in Figure \ref{fig:VesicularWaveform}. From the waveform one can see the cycles of inhalation and exhalation, which are the pairs of high amplitude signals separated by low amplitude lulls between breaths. \\
+
+\subsubsection{Wheeze}
+
+Lung wheeze is characterized by well-defined pitches over sustained durations. To observe the pitch characteristics the signal is tranformed from the time domain to the frequency domain through a Fast Fourier Transform. Clinicians categorize wheeze into two types: low wheeze and high wheeze. These wheezes, respectively, have large magnitude peaks in low frequency (<200 Hz) and higher fequency regions. Figure \ref{fig:FFTVesicularWheeze} overlays a vesicular and high pitch wheeze in the frequency domain. The low frequency portions of each signal do not show an appreciable difference in magnitude. The high frequency signal magnitudes, on the other hand, differ greatly. The vesicular signal has a gradual and relatively constant decrease in magnitude moving into the higher frequencies. The wheeze signal instead has a very large magnitude peak that is approximately four times greater than strongest frequency signal of the vesicular data. \\
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{images/FFTVesicularWheeze.png}
+	\caption{Comparison of vesicular and high pitched wheeze in frequency domain}
+ 	\label{fig:FFTVesicularWheeze}
+\end{figure}
+
+The following features are extracted to characterize wheeze, with the motivations behind choosing each feature: \\
+\begin{itemize}
+\item
+	Peak frequency in low frequency region (<200 Hz)\\
+	Capture magnitude of spike of low frequency wheeze\\
+\item
+	Peak frequency in middle frequency region (200-800 Hz)\\
+	Capture magnitude of spike of high frequency wheeze\\
+\item
+	Peak frequency in high frequency region (>800 Hz)\\
+	Capture magnitude of spike of high frequency wheeze\\
+\item
+	Ratio of max signal amplitude in low frequency region to average signal amplitude in low frequency region\\
+	Capture a spike of low wheeze, which should have a high maximum to average magnitude ratio, and normalizes across different signals\\
+\item
+	Ratio of max signal amplitude in middle frequency region to average signal amplitude in middle frequency region\\
+	Capture a spike of high wheeze, which should have a high maximum to average magnitude ratio, and normalizes across different signals\\
+\item
+	Ratio of signal amplitudes across low frequency region to middle frequency region\\
+	(Explanation)\\
+\item
+	Ratio of signal amplitudes across high frequency region to middle frequency region\\
+	(Explanation)\\
+\end{itemize}
+
+\subsubsection{Crackle}
+
+The following features are extracted to characterize crackle, with the motivations behind choosing each feature: \\
+
+\begin{itemize}
+\item
+	Ratio of signal amplitudes across low frequency region to middle frequency region\\
+	(Explanation)\\
+\item
+	Ratio of signal amplitudes across high frequency region to middle frequency region\\
+	(Explanation)\\
+\end{itemize}
+
+\newpage
+
+\begin{thebibliography}{9}
+
+\bibitem{Yi MEng}
+	Yi, Gina A., and John V. Guttag. A Software Toolkit for Acoustic Respiratory Analysis. Thesis. Massachusetts Institute of Technology, 2004. Cambridge: Massachusetts Institute of Technology Libraries, 2005. DSpace@MIT. Massachusetts Institute of Technology. Dept. of Electrical Engineering and Computer Science. Web. 01 Apr. 2014.
+\bibitem{Speech Analysis}
+	"Lecture 10: Speech Signal Analysis." Introduction to Computer Programming with MATLAB. UCL Department of Phonetics and Linguistics, n.d. Web. 01 Apr. 2014.
+
+\end{thebibliography}
 
 \end{document}
