@@ -108,15 +108,15 @@ Three types of lung sounds are used in the diagnosis of pulmonary disease: wheez
 
 \subsection{Wheeze}
 
-Wheeze is characterized by a set of continuous sounds, sometimes described as "musical" which is produced by restricted air flow when the person inhales and exhales.  Multiple frequencies can be heard in these sounds.  More recently, several clinical organizations have divided the wheeze category of sounds into two separate categories: high-frequency wheeze and low-frequency wheeze, in order to differentiate between the characteristic wheezing produce by the upper and lower parts of the respiratory system, respectively. (see reference online).
+Wheeze is characterized by a set of sustained musical sounds caused by restricted airflow from a narrow or blocked passage. More blocked passages tends to correlate with an increase in wheezes, but extreme blockage can restrict airflow to the point that no wheeze may be heard. Wheezes can be heard in either inhalation or exhalation. Multiple frequencies can be heard in these sounds.  Several clinical organizations have divided sounds into  two categories: high frequency wheeze and low frequency wheeze. High frequency wheezes are produced by the upper parts of the respiratory system, while low frequency wheezes are produced by the lower parts. 
 
 \subsection{Crackle}
 
-Crackle
+Crackle is characterized by short, non-musical, explosive sounds from the either the mouth or chest. A typical crackle lasts approximately 20 ms. There are two main sub-classifications of crackle: coarse and fine. Coarse crackles are heard earlier in inspiration and throughout expiration. They indicate that the airway is only open intermittently and may be related to secretions. Fine crackles are heard later in the inspiration cycle and occasionally through expiration. They are unrelated to secretions and are often one of the earliest signs of disease. Only coarse crackles may be transmitted to the mouth. \cite{Yi MEng, NEJoM}.
 
 \subsection{Pleural Rub}
 
-Pleural Rub
+Pleural rub is characterized by low-pitched, grating, or creaking sounds. The sounds are caused by pleural surfaces rubbing together during the respiratory cycle. The rubbing indicates the presence of pleural inflammation or tumors. Pleural rub can be heard during inhalation or exhalation, but is more common in the former. \cite{rnceus}
 
 \newpage
 
@@ -137,7 +137,7 @@ Pleural Rub
  
  The code was structured so that pieces may be swapped out easily. The three main components were the parsers to read in data, algorithms to construct a feature matrix from the data, and the machine learning algorithm to classify the data. The second task was to implement the more powerful SVM classifier. The SVM algorithm is similar to perceptron in that they are both linear classifiers. The advantage of the SVM, however, is that it is a maximum margin separator. This means that the classification line will pass through the point that maximizes the distance between the nearest oppositely labeled training data points. If the line passed closer to one of the data points, then the likelihood that the classifier overfits the data increases. Overfitting gives good results on testing data but has the tendency to generalize poorly to test data in the general population.\\
  
- At this stage SVMs had just been covered in the machine learning course. The techiques for implementing a SVM were very different from the perceptron algorithm and required linear solvers. It became apparent that implementing this myself was not optimal because it would have required yet another library to be brought in to the project and forseeably a great undertaking in working out all of the details of the algorithm. Thus I decided to turn back to incorporating a machine learning library, specifically LibSVM. The modular structure of the existing code made integration of the library's SVM classifier a smooth process with minimal changes. Use of the library also awarded additional functionality, including confidence intervals for the SVM. These are values in the range [0,1] attributing how much the classifier associates test data with each label. With a SVM in hand the focus of the project switched to classification on the lung data. \cite{SVM}\\
+ At this stage SVMs had just been covered in the machine learning course. The techiques for implementing a SVM were very different from the perceptron algorithm and required linear solvers. It became apparent that implementing this myself was not optimal because it would have required yet another library to be brought in to the project and forseeably a great undertaking in working out all of the details of the algorithm. Thus I decided to return to incorporating a machine learning library, specifically LibSVM. The modular structure of the existing code made integration of the library's SVM a smooth process with minimal changes. Use of the library also awarded additional functionality, including confidence intervals for the SVM. These are values in the range [0,1] attributing how much the classifier associates test data with each label. With a SVM in hand the focus of the project switched to classification on the lung data. \cite{SVM}\\
 
 \subsection{Feature Extraction}
 
@@ -150,7 +150,7 @@ Feature extraction was the most open ended and challenging  component of the pro
 \end{figure}
 
 Lung data comes in the form of an audio file represented by signal amplitude taken at regular intervals determined by the sampling frequency. A graph of amplitude over time represents the waveform of the lung sound, as seen in Figure \ref{fig:VesicularWaveform}. From the waveform one can see the cycles of inhalation and exhalation, which are the pairs of high amplitude signals separated by low amplitude lulls between breaths. \\
-
+\newpage
 \subsubsection{Wheeze}
 
 \paragraph{Characteristics}
@@ -325,6 +325,8 @@ The most open ended question for future work remains which features should be in
 	"Lecture 10: Speech Signal Analysis." Introduction to Computer Programming with MATLAB. UCL Department of Phonetics and Linguistics, n.d. Web. 01 Apr. 2014.
 \bibitem{NEJoM}
 	Bohadana, Abraham, M.D., Gabriel Izbicki, M.D., and Steve S. Kraman, M.D. "Fundamentals of Lung Auscultation." Ed. Edward W. Campion, M.D. The New England Journal of Medicine 370.8 (2014): 744-51. Web.
+\bibitem{rnceus}
+	"Abnormal Breath Sounds." RnCeus.com, n.d. Web. 22 May 2014. <http://www.rnceus.com/resp/respabn.html>.
 \end{thebibliography}
 
 \end{document}
